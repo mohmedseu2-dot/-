@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تاريخ بغداد </title>
+  <meta name="description" content="كل ما تريد معرفته عن بغداد: التاريخ، الجغرافيا، الثقافة، المعالم، الطعام، التعليم، المراجع، والوسائط." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- أيقونات بسيطة -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --sand:#d7c9a3; /* رملي ناعم */
+      --sand-2:#e7ddbf; /* رملي فاتح */
+      --white:#ffffff;
+      --ink:#2b2b2b;
+      --accent:#a0793d; /* ذهبي/نحاسي خافت */
+      --muted:#6b6b6b;
+      --card:#fbf8ef;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;color:var(--ink);background:var(--white);}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* شريط علوي */
+    header{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.8);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid #eee}
+    .nav{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:auto;padding:10px 16px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand .logo{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--sand),var(--sand-2));border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+    .brand h1{font-size:1.2rem;margin:0;font-weight:800;letter-spacing:.5px}
+
+    .nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+    .nav li a{display:block;padding:10px 12px;border-radius:999px;background:transparent}
+    .nav li a:hover{background:var(--sand-2)}
+
+    /* بطل الصفحة */
+    .hero{position:relative;overflow:hidden}
+    .hero .cover{height:62vh;display:grid;place-items:center;background:linear-gradient(180deg,rgba(215,201,163,.35),rgba(255,255,255,.9)), url('https://upload.wikimedia.org/wikipedia/commons/2/21/Tigris_River_in_Baghdad_%282016%29.jpg') center/cover}
+    .hero .content{max-width:980px;text-align:center;padding:24px}
+    .title{font-size:clamp(28px,4.5vw,54px);margin:0 0 8px 0;font-weight:900}
+    .subtitle{font-size:clamp(16px,2.2vw,22px);color:#4b4b4b;margin:0 auto 16px}
+    .hero .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .btn{border:none;padding:12px 18px;border-radius:999px;font-weight:700;cursor:pointer}
+    .btn.primary{background:var(--sand);}
+    .btn.secondary{background:var(--white);border:1px solid #ddd}
+
+    /* مقاطع عامة */
+    section{padding:48px 16px}
+    .container{max-width:1100px;margin:auto}
+    .section-title{font-size:28px;margin:0 0 14px 0;font-weight:800}
+    .section-desc{color:var(--muted);margin:0 0 22px}
+
+    /* بطاقات */
+    .grid{display:grid;gap:16px}
+    @media(min-width:720px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+    .card{background:var(--card);border:1px solid #eee;border-radius:20px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.04)}
+    .card .pad{padding:16px}
+
+    /* شارات */
+    .chip{display:inline-flex;align-items:center;gap:6px;background:var(--white);border:1px solid #eee;border-radius:999px;padding:6px 10px;font-size:12px;margin:4px 6px 0 0}
+
+    /* تبويبات */
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .tab{padding:10px 14px;border-radius:999px;border:1px solid #e7e0cf;background:#fff;cursor:pointer}
+    .tab.active{background:var(--sand);}
+
+    /* أكورديون */
+    details{background:#fff;border:1px solid #eee;border-radius:16px;padding:10px 14px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:700}
+
+    /* معرض الصور */
+    .gallery{display:grid;gap:8px;grid-template-columns:repeat(2,1fr)}
+    .gallery img{width:100%;height:210px;object-fit:cover;border-radius:14px}
+    @media(min-width:720px){.gallery{grid-template-columns:repeat(4,1fr)}}
+
+    /* خط زمني */
+    .timeline{position:relative;padding-left:8px}
+    .timeline::before{content:"";position:absolute;top:0;bottom:0;right:auto;left:10px;width:3px;background:linear-gradient(var(--sand),transparent)}
+    .t-item{position:relative;padding:12px 16px 12px 28px;margin:8px 0;background:#fff;border:1px solid #eee;border-radius:14px}
+    .t-item::after{content:"";position:absolute;left:4px;top:18px;width:12px;height:12px;background:var(--sand);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--sand)}
+
+    /* تذييل */
+    footer{background:linear-gradient(0deg,var(--sand-2),#fff);border-top:1px solid #eee;padding:32px 16px}
+    .footer-grid{display:grid;gap:16px}
+    @media(min-width:720px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+
+    /* شريط بحث */
+    .searchbar{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #eee;border-radius:999px;padding:8px 12px}
+    .searchbar input{flex:1;border:none;outline:none;font-size:15px}
+
+    /* وضع ليلي بسيط */
+    .dark{background:#161616;color:#f1f1f1}
+    .dark header{background:rgba(22,22,22,.8);border-color:#303030}
+    .dark .card{background:#1d1d1d;border-color:#333}
+    .dark details, .dark .t-item{background:#1d1d1d;border-color:#333}
+    .dark .nav li a:hover{background:#2b2b2b}
+    .dark .searchbar{background:#1f1f1f;border-color:#333}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="brand"><div class="logo"></div><h1>بغداد — مدينة السلام</h1></div>
+      <ul>
+        <li><a href="#about">نبذة</a></li>
+        <li><a href="#history">التاريخ</a></li>
+        <li><a href="#culture">الثقافة والطعام</a></li>
+        <li><a href="#landmarks">معالم</a></li>
+        <li><a href="#map">الخريطة</a></li>
+        <li><a href="#media">وسائط/مراجع</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="cover">
+        <div class="content">
+          <h2 class="title">بغداد: قلب دجلة، وتاريخ يمتد لأكثر من ١٢ قرنًا</h2>
+          <p class="subtitle">عاصمة العراق، مدينة أسسها الخليفة العباسي المنصور سنة ٧٦٢م، واشتهرت بـ"مدينة السلام" وببيت الحكمة الذي أضاء العالم علمًا وفكرًا.</p>
+          <div class="hero cta">
+            <button class="btn primary" onclick="scrollToId('about')"><i class='bx bx-book-open'></i> ابدأ الاستكشاف</button>
+            <button class="btn secondary" id="toggleMode"><i class='bx bx-moon'></i> الوضع الليلي</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- نبذة -->
+    <section id="about">
+      <div class="container">
+        <h3 class="section-title">نبذة سريعة</h3>
+        <p class="section-desc">تقع بغداد على نهر دجلة في قلب بلاد الرافدين. تُعد أكبر مدن العراق وإحدى أكبر حواضر الشرق الأوسط سكانيًا. اشتهرت عبر التاريخ بالتجارة والعلم والأدب والأسواق والعمارة العباسية.</p>
+        <div class="grid cols-3">
+          <div class="card">
+            <div class="pad">
+              <h4>الموقع والجغرافيا</h4>
+              <p>على ضفاف دجلة، على بُعد نحو ٥٣٠ كم من رأس الخليج العربي. تنقسم إلى الرصافة والكرخ، يربطهما عدد من الجسور.</p>
+              <span class="chip"><i class='bx bx-water'></i> دجلة</span>
+              <span class="chip"><i class='bx bx-map'></i> الرصافة/الكرخ</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="pad">
+              <h4>السكان</h4>
+              <p>بغداد هي المدينة الأكبر في العراق. تُقدَّر حضريًا بعدة ملايين ضمن واحدة من أكبر تجمعات الشرق الأوسط.</p>
+              <span class="chip"><i class='bx bx-group'></i> حضرية كبرى</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="pad">
+              <h4>المناخ</h4>
+              <p>مناخ صحراوي حار (BWh). صيف شديد الحرّ، وشتاء معتدل، ومتوسط حرارة يوليو يقارب ٤٤°م.</p>
+              <span class="chip"><i class='bx bx-sun'></i> صيف حار جدًا</span>
+              <span class="chip"><i class='bx bx-wind'></i> شتاء معتدل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- التاريخ -->
+    <section id="history" style="background:linear-gradient(0deg,var(--sand-2),#fff)">
+      <div class="container">
+        <h3 class="section-title">التاريخ: من المدينة المدورة إلى الحاضر</h3>
+        <p class="section-desc">اختار الخليفة العباسي <strong>أبو جعفر المنصور</strong> هذا الموضع سنة ٧٦٢م ليبني فيه "المدينة المدورة" عاصمة لدولته، التي عُرفت باسم <em>مدينة السلام</em>. ازدهرت بغداد لاحقًا في عهد <strong>هارون الرشيد</strong> و<strong>المأمون</strong>، وبرزت <strong>بيت الحكمة</strong> كمجمع علمي وترجمة ونسخ ومناقشة فكرية. على مر القرون شهدت المدينة فترات ازدهار وتراجع، ونهضت مرارًا.</p>
+
+        <div class="timeline" id="timeline">
+          <div class="t-item"><strong>٧٦٢–٧٦٦م</strong> — تشييد <em>المدينة المدورة</em> على يد المنصور لتكون مقر الخلافة العباسية.</div>
+          <div class="t-item"><strong>القرن ٩</strong> — أوج الازدهار العلمي والأدبي؛ نشاط <em>بيت الحكمة</em> وازدهار حركة الترجمة.</div>
+          <div class="t-item"><strong>١٢٢٧م</strong> — تأسيس <em>المدرسة المستنصرية</em> كأبرز مؤسسات التعليم في بغداد العباسية المتأخرة.</div>
+          <div class="t-item"><strong>العصر الحديث</strong> — جامعات حديثة مثل <em>جامعة بغداد</em> (تحديث/تنظيم ١٩٥٧) ومعالم معاصرة بارزة.</div>
+          <div class="t-item"><strong>٢٠٠٣–الآن</strong> — ضرر واسع للمؤسسات الثقافية خلال الغزو، ثم أعمال ترميم وإعادة افتتاح <em>المتحف العراقي</em> رسميًا ٢٠١٥، وتنامٍ ثقافي ملحوظ.</div>
+        </div>
+
+        <details>
+          <summary>بيت الحكمة: لماذا كان مهمًا؟</summary>
+          <p>كان مركزًا أكاديميًا ومكتبةً ضخمة جمعت مترجمين وعلماء من ثقافات ولغات متعددة (العربية، الفارسية، السريانية، اليونانية وغيرها)، ومهّدت لإنجازات في الفلك والرياضيات والطب والفلسفة.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- الجغرافيا والمناخ -->
+    <section id="geo">
+      <div class="container">
+        <h3 class="section-title">الجغرافيا والمناخ</h3>
+        <div class="grid cols-2">
+          <div class="card"><div class="pad">
+            <h4>نهر دجلة — الشريان الأزلي</h4>
+            <p>يشق دجلة المدينة إلى جانبَيْها، وتدور الحياة المدنية حول جسوره وكورنيشاته وأسواقه القديمة، في أحياء مثل الرصافة والكرخ.</p>
+            <ul>
+              <li>الارتفاع عن سطح البحر: ~٣٤ م تقريبًا.</li>
+              <li>الموقع التقريبي: ٣٣٫٣ شمالًا، ٤٤٫٤ شرقًا.</li>
+            </ul>
+          </div></div>
+          <div class="card"><div class="pad">
+            <h4>مناخ صحراوي حار (BWh)</h4>
+            <p>صيف طويل شديد الحرارة وجاف؛ <strong>يوليو</strong> عادةً الأشد بحرارة بمتوسط عُظمى يقترب من <strong>٤٤°م</strong>. الشتاء قصير ومعتدل، أبرد الشهور <strong>يناير</strong> بمتوسط عظمى نحو <strong>١٦°م</strong> وصغرى <strong>٥°م</strong>.</p>
+            <div class="chip"><i class='bx bx-thermometer'></i> حار جدًا صيفًا</div>
+            <div class="chip"><i class='bx bx-cloud'></i> أمطار شتوية محدودة</div>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الثقافة والطعام -->
+    <section id="culture" style="background:linear-gradient(180deg,var(--sand-2),#fff)">
+      <div class="container">
+        <h3 class="section-title">الثقافة والمطبخ البغدادي</h3>
+        <p class="section-desc">عُرفت بغداد بالكتب والشعر والموسيقى والمقاهي. قلبها النابض للثقافة هو <strong>شارع المتنبي</strong>—سوق الكتب الذي يستعيد وهجه كل جمعة.</p>
+        <div class="grid cols-3">
+          <div class="card"><div class="pad">
+            <h4>أطباق شهيرة</h4>
+            <ul>
+              <li><strong>المسكوف</strong>: سمك شبوط (كارپ) يُشق ويُشوَى على الجمر بتتبيلة طماطم/تمر هندي. يُعد طبقًا وطنيًا واسع الانتشار على ضفاف دجلة.</li>
+              <li><strong>الدولمة</strong> والبرياني البغدادي والكليجة.</li>
+            </ul>
+          </div></div>
+          <div class="card"><div class="pad">
+            <h4>أدب وفنون</h4>
+            <p>من أجواء <em>ألف ليلة وليلة</em> إلى الشعر الحديث، ظلّت بغداد مسرحًا للحكايات والجدل الثقافي والمعارض الفنية والأنشطة المسرحية.</p>
+          </div></div>
+          <div class="card"><div class="pad">
+            <h4>شارع المتنبي</h4>
+            <p>مركز تاريخي لبيع الكتب والمخطوطات، وتراثٌ حيّ للمكتبات والمقاهي الثقافية بالقرب من الرصافة وقرب القصر العباسي.</p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- معالم -->
+    <section id="landmarks">
+      <div class="container">
+        <h3 class="section-title">أبرز المعالم</h3>
+        <div class="grid cols-3">
+          <div class="card"><div class="pad">
+            <h4>المدرسة المستنصرية</h4>
+            <p>واحد من أهم شواهد بغداد العباسية المتأخرة (ق/١٣م)، ضمن قائمة تمهيدية للتراث العالمي، وتطل على دجلة في الرصافة.</p>
+            <a href="https://en.wikipedia.org/wiki/Mustansiriyya_Madrasa" target="_blank">تعرف أكثر</a>
+          </div></div>
+          <div class="card"><div class="pad">
+            <h4>القصر العباسي</h4>
+            <p>مجمع تاريخي قرب دجلة شمال شارع المتنبي، يرجع للقرن الثاني عشر الميلادي (نُسب إلى الناصر).</p>
+            <a href="https://en.wikipedia.org/wiki/Abbasid_Palace" target="_blank">تعرف أكثر</a>
+          </div></div>
+          <div class="card"><div class="pad">
+            <h4>نصب الشهيد</h4>
+            <p>قبة تركوازية منفلقة (١٩٨٣م) باتت رمزًا بصريًا للمدينة، وسط بحيرة صناعية ومنصة دائرية.</p>
+            <a href="https://en.wikipedia.org/wiki/Al-Shaheed_Monument" target="_blank">تعرف أكثر</a>
+          </div></div>
+          <div class="card"><div class="pad">
+            <h4>المتحف العراقي</h4>
+            <p>يضم كنوز حضارات وادي الرافدين من عصور مختلفة. أُعيد افتتاحه رسميًا في ٢٠١٥ بعد أعمال ترميم واسترداد لآثار منهوبة.</p>
+            <a href="https://www.britannica.com/topic/Iraq-Museum" target="_blank">تعرف أكثر</a>
+          </div></div>
+          <div class="card"><div class="pad">
+            <h4>المدينة المدورة</h4>
+            <p>النواة الأولى لبغداد (٧٦٢–٧٦٦م) التي شيدها المنصور، وعُرفت باسم "مدينة السلام".</p>
+            <a href="https://en.wikipedia.org/wiki/Round_city_of_Baghdad" target="_blank">تعرف أكثر</a>
+          </div></div>
+          <div class="card"><div class="pad">
+            <h4>جامعات</h4>
+            <p><strong>جامعة بغداد</strong> (تنظيم ١٩٥٧) من أكبر جامعات العراق، وإلى جانبها <strong>الجامعة المستنصرية</strong> الحديثة (١٩٦٣) وجامعات أخرى.</p>
+            <a href="https://en.uobaghdad.edu.iq/" target="_blank">موقع جامعة بغداد</a>
+          </div></div>
+        </div>
+
+        <div class="gallery" style="margin-top:18px">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tigris%2C_Baghdad.jpg" alt="نهر دجلة في بغداد">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Tigris_River_in_Baghdad_%282016%29.jpg" alt="نهر دجلة من الجو">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/The-modern-Baghdad-with-the-Tigris-in-the-foreground-352041839815.jpg" alt="أفق بغداد الحديث">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Al_Shaheed_Monument.jpg/640px-Al_Shaheed_Monument.jpg" alt="نصب الشهيد">
+        </div>
+        <small>مصدر الصور: ويكيميديا كومنز.</small>
+      </div>
+    </section>
+
+    <!-- خريطة مبسّطة (تضمين OSM) -->
+    <section id="map" style="background:linear-gradient(180deg,var(--sand-2),#fff)">
+      <div class="container">
+        <h3 class="section-title">خريطة تفاعلية</h3>
+        <p class="section-desc">مرِّر للتكبير وشاهد تموضع المعالم على ضفاف دجلة.</p>
+        <div class="card">
+          <div class="pad">
+            <iframe title="Baghdad Map" src="https://www.openstreetmap.org/export/embed.html?bbox=44.30%2C33.20%2C44.54%2C33.46&amp;layer=mapnik" style="width:100%;height:420px;border-radius:14px;border:1px solid #ddd"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- وسائط ومراجع -->
+    <section id="media">
+      <div class="container">
+        <h3 class="section-title">وسائط، كتب، بودكاست، ومراجع موثوقة</h3>
+        <p class="section-desc">مجموعة مختارة من المراجع المتاحة على الويب والكتب والبودكاست لفهم بغداد عبر التاريخ والحاضر.</p>
+
+        <div class="tabs" id="mediaTabs">
+          <button class="tab active" data-target="books">كتب</button>
+          <button class="tab" data-target="podcasts">بودكاست</button>
+          <button class="tab" data-target="web">مواقع</button>
+        </div>
+
+        <div id="books" class="tab-panel">
+          <div class="grid cols-3">
+            <div class="card"><div class="pad">
+              <h4>Baghdad: City of Peace, City of Blood</h4>
+              <p>جستن ماروزي (٢٠١٤) — سرد تاريخي شامل للمدينة عبر عصور مختلفة.</p>
+            </div></div>
+            <div class="card"><div class="pad">
+              <h4>The House of Wisdom</h4>
+              <p>جِم الخليلِي (٢٠١٠) — قصة بيت الحكمة ودور بغداد في نقل العلوم.</p>
+            </div></div>
+            <div class="card"><div class="pad">
+              <h4>When Baghdad Ruled the Muslim World</h4>
+              <p>هيو كينيدي (٢٠٠٥) — عن بغداد والخلافة العباسية وذروة التأثير.</p>
+            </div></div>
+          </div>
+        </div>
+
+        <div id="podcasts" class="tab-panel" hidden>
+          <div class="grid cols-2">
+            <div class="card"><div class="pad">
+              <h4>BBC Witness History — حلقات عن بغداد/العراق</h4>
+              <p>شهادات تاريخية قصيرة عن أحداث مفصلية. ابحث عن حلقات "Baghdad".</p>
+              <a href="https://www.bbc.co.uk/programmes/p004t1hd/episodes/player" target="_blank">استمع</a>
+            </div></div>
+            <div class="card"><div class="pad">
+              <h4>The History of Islam Podcast — العصر العباسي</h4>
+              <p>سردٌ صوتي لقيام الدولة العباسية ودور بغداد العلمي.</p>
+              <a href="https://islamichistorypodcast.com/" target="_blank">استمع</a>
+            </div></div>
+          </div>
+        </div>
+
+        <div id="web" class="tab-panel" hidden>
+          <div class="grid cols-3">
+            <div class="card"><div class="pad">
+              <h4>مقالة بغداد — بريتانيكا</h4>
+              <p>تعريف شامل ومحدَّث عن المدينة والجغرافيا والديموغرافيا.</p>
+              <a href="https://www.britannica.com/place/Baghdad" target="_blank">زيارة</a>
+            </div></div>
+            <div class="card"><div class="pad">
+              <h4>UNESCO — معالم تاريخية على دجلة</h4>
+              <p>ملف تمهيدي يضم المستنصرية والقصر العباسي ضمن الشريط التاريخي.</p>
+              <a href="https://whc.unesco.org/en/tentativelists/5880/" target="_blank">زيارة</a>
+            </div></div>
+            <div class="card"><div class="pad">
+              <h4>المتحف العراقي — بريتانيكا</h4>
+              <p>ملخص تاريخ المتحف والنهب وإعادة الافتتاح.</p>
+              <a href="https://www.britannica.com/topic/Iraq-Museum" target="_blank">زيارة</a>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <div class="pad">
+            <h4>حقائق سريعة قابلة للبحث</h4>
+            <div class="searchbar">
+              <i class='bx bx-search'></i>
+              <input id="searchInput" type="text" placeholder="ابحث عن: المتنبي، المستنصرية، المناخ، المسكوف...">
+            </div>
+            <div id="searchResults" style="margin-top:12px"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- اختبار صغير -->
+    <section id="quiz" style="background:linear-gradient(0deg,var(--sand-2),#fff)">
+      <div class="container">
+        <h3 class="section-title">اختبر معرفتك عن بغداد</h3>
+        <div class="card"><div class="pad">
+          <ol id="quizList">
+            <li>متى أُسست بغداد العباسية؟
+              <div>
+                <button class="btn secondary" onclick="answer(this, true)">٧٦٢م</button>
+                <button class="btn secondary" onclick="answer(this, false)">٨٠١م</button>
+                <button class="btn secondary" onclick="answer(this, false)">٩٠٠م</button>
+              </div>
+            </li>
+            <li>ما الطبق الذي يُشوى من سمك الشبوط ويشتهر ببغداد؟
+              <div>
+                <button class="btn secondary" onclick="answer(this, true)">المسكوف</button>
+                <button class="btn secondary" onclick="answer(this, false)">القوزي</button>
+                <button class="btn secondary" onclick="answer(this, false)">المندي</button>
+              </div>
+            </li>
+            <li>ما اسم سوق الكتب الشهير في قلب بغداد؟
+              <div>
+                <button class="btn secondary" onclick="answer(this, false)">باب الشرقي</button>
+                <button class="btn secondary" onclick="answer(this, true)">شارع المتنبي</button>
+                <button class="btn secondary" onclick="answer(this, false)">شارع الرشيد فقط</button>
+              </div>
+            </li>
+          </ol>
+          <p id="quizScore" style="font-weight:800"></p>
+        </div></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h4>عن هذا الموقع</h4>
+        <p>موقع معرفي تفاعلي عن بغداد، يركّز على الدقة والوضوح والبساطة البصرية بالألوان الرملية/البيضاء. يمكنك استخدامه كمرجع سريع أو كمدخل للقراءة المتعمقة عبر الروابط.</p>
+        <div class="chip"><i class='bx bx-check-shield'></i> معلومات موثوقة</div>
+        <div class="chip"><i class='bx bx-book'></i> مراجع وروابط</div>
+      </div>
+      <div>
+        <h4>روابط مباشرة</h4>
+        <ul>
+          <li><a href="#history">التاريخ</a></li>
+          <li><a href="#landmarks">المعالم</a></li>
+          <li><a href="#culture">الثقافة</a></li>
+          <li><a href="#media">مراجع</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>مراجع مختارة</h4>
+        <ul>
+          <li><a target="_blank" href="https://www.britannica.com/place/Baghdad">بغداد — بريتانيكا</a></li>
+          <li><a target="_blank" href="https://whc.unesco.org/en/tentativelists/5880/">UNESCO — الرصافة التاريخية</a></li>
+          <li><a target="_blank" href="https://weatherspark.com/y/103217/Average-Weather-in-Baghdad-Iraq-Year-Round">مناخ بغداد</a></li>
+        </ul>
+      </div>
+    </div>
+    <p style="text-align:center;color:#666;margin-top:16px">© ٢٠٢٥ — معلومات تعليمية، للاستخدام غير التجاري.</p>
+  </footer>
+
+  <script>
+    // تبديل الوضع الليلي
+    const toggle = document.getElementById('toggleMode');
+    toggle.addEventListener('click', ()=>{
+      document.documentElement.classList.toggle('dark');
+      toggle.querySelector('i').classList.toggle('bx-sun');
+      toggle.querySelector('i').classList.toggle('bx-moon');
+    });
+
+    // تبويبات الوسائط
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab=>{
+      tab.addEventListener('click', ()=>{
+        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+        tabs.forEach(t=> document.getElementById(t.dataset.target).hidden = true);
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).hidden = false;
+      })
+    })
+
+    // تمرير سلس
+    function scrollToId(id){
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    // بحث بسيط داخل حقائق الموقع
+    const dataIndex = [
+      {k:'تأسيس بغداد', v:'أُسست بغداد سنة ٧٦٢م على يد الخليفة العباسي المنصور وبُنيت كمدينة مدورة.'},
+      {k:'بيت الحكمة', v:'مجمع علمي ومكتبة كبرى في العصر العباسي، نشِط في الترجمة والبحث.'},
+      {k:'المستنصرية', v:'مدرسة تاريخية من القرن ١٣م على ضفاف دجلة في الرصافة.'},
+      {k:'القصر العباسي', v:'معلم تاريخي من القرن ١٢م قرب شارع المتنبي.'},
+      {k:'المتحف العراقي', v:'أُعيد افتتاحه رسميًا عام ٢٠١٥ بعد أعمال ترميم.'},
+      {k:'المناخ', v:'صحراوي حار (BWh)، تموز الأكثر حرارة بمتوسط ~٤٤°م.'},
+      {k:'المسكوف', v:'طبق سمك شبوط يُشوى على الجمر ويُعد من أشهر أطباق بغداد.'},
+      {k:'شارع المتنبي', v:'سوق كتب تاريخي، القلب الثقافي للمدينة.'},
+      {k:'جامعة بغداد', v:'أُعيد تنظيمها كجامعة حديثة في ١٩٥٧ وتُعد من الأكبر في العراق.'}
+    ];
+
+    const input = document.getElementById('searchInput');
+    const results = document.getElementById('searchResults');
+    input.addEventListener('input', ()=>{
+      const q = input.value.trim();
+      if(!q){results.innerHTML='';return}
+      const found = dataIndex.filter(it=> (it.k+it.v).includes(q));
+      results.innerHTML = found.length ? found.map(it=>`<div class='t-item'><strong>${it.k}:</strong> ${it.v}</div>`).join('') : `<div class='t-item'>لا نتائج. جرّب كلمات أخرى.</div>`
+    })
+
+    // اختبار بسيط
+    let score = 0; let answered = 0;
+    function answer(btn, ok){
+      if(btn.dataset.done) return;
+      btn.dataset.done = '1'; answered++;
+      if(ok){ score++; btn.style.background = '#b7e1b0'} else { btn.style.background = '#f7c6c6'}
+      document.getElementById('quizScore').textContent = `نتيجتك: ${score} / ${Math.max(answered,3)}`;
+    }
+  </script>
+</body>
+</html>
